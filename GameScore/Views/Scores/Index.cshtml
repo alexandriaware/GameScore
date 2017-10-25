@@ -22,6 +22,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Points)  @*//These two bits are responsible for grabbing the table names*@
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Team)  @*//And this snags the Teams column*@
+        </th>
         <th></th>
     </tr>
 
@@ -33,6 +36,9 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Points) @*//This column is responsible for displaying the points*@
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Team) @*//this column is responsible for displaying the team*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) | @*//This column displays edit, detail, and delete actions.*@
