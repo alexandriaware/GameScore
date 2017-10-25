@@ -12,7 +12,7 @@ namespace GameScore.Controllers
 {
     public class ScoresController : Controller
     {
-        private GameScoreContext db = new GameScoreContext();
+        private GameScoreContext db = new GameScoreContext(); //reference to our database!
 
         // GET: Scores
         public ActionResult Index()

@@ -1,35 +1,41 @@
 ﻿@model IEnumerable<GameScore.Models.Score>
+@*//Here we are defining a variable to use in the program*@
+@*//An "IEnumerable" is a type of collection.*@
 
 @{
     ViewBag.Title = "Index";
 }
 
+
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a new player", "Create")
+    @*//html is a helperlink that has a bunch of stuff behind it to help out our code.*@
+    @*//"Create" takes us to our create page.*@
 </p>
-<table class="table">
+<table class="table"> @*//BOO TABLE*@
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            @Html.DisplayNameFor(model => model.Name) @*//Looks at the model and then looks for the model name*@
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Points)
+            @Html.DisplayNameFor(model => model.Points)  @*//These two bits are responsible for grabbing the table names*@
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model) { @*Each time we go through this loop, we will create a row.*@
+    @*//And each time it goes through the row, we build three columns like name|number|points*@
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Name)
+            @Html.DisplayFor(modelItem => item.Name) @*//First column is responsible for displaying the name*@
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Points)
+            @Html.DisplayFor(modelItem => item.Points) @*//This column is responsible for displaying the points*@
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) | @*//This column displays edit, detail, and delete actions.*@
             @Html.ActionLink("Details", "Details", new { id=item.ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ID })
         </td>
